@@ -73,7 +73,7 @@ require("bundler/setup")
   patch("/stores/:id") do
     store_id = params.fetch("id").to_i()
     @store = Store.find(store_id)
-    brand_ids = params.fetch("brand_id")
+    brand_ids = params.fetch("brand_ids")
     @store.update({:brand_ids => brand_ids})
     @brands = Brand.all()
     erb(:store_details)
