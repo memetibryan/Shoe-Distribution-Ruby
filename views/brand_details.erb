@@ -8,7 +8,7 @@
 
     <ul>
       <% @brand.stores().each() do |brand| %>
-        <li><%= brand.name() %></li>
+        <li><%= brand.name() %><p>Stocked On:</p><%= brand.created_at() %></li>
       <% end %>
     </ul>
   <% else %>

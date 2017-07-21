@@ -70,6 +70,11 @@ require("bundler/setup")
     erb(:store_edit)
   end
 
+  get("/brands/:id/edit") do
+    @brand = Brand.find(params.fetch("id").to_i())
+    erb(:brand_edit)
+  end
+
   patch("/stores/:id") do
     store_id = params.fetch("id").to_i()
     @store = Store.find(store_id)
@@ -83,6 +88,15 @@ require("bundler/setup")
     @store = Store.find(params.fetch("id").to_i())
     if @store.destroy()
       redirect("/stores")
+    else
+      erb(:errors)
+    end
+  end
+
+  delete("/brands/:id") do
+    @brand = Brand.find(params.fetch("id").to_i())
+    if @brand.destroy()
+      erb(:success)
     else
       erb(:errors)
     end
