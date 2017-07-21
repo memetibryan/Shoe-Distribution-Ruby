@@ -65,6 +65,11 @@ require("bundler/setup")
     erb(:brand_details)
   end
 
+  get("/stores/:id/edit") do
+    @store = Store.find(params.fetch("id").to_i())
+    erb(:store_edit)
+  end
+
   patch("/stores/:id") do
     store_id = params.fetch("id").to_i()
     @store = Store.find(store_id)
@@ -74,13 +79,11 @@ require("bundler/setup")
     erb(:store_details)
   end
 
-  # redirect code
-
-  # delete('/tasks/:id') do
-  #   @task = Task.find(params.fetch("id").to_i()
-  #   if @task.destroy()
-  #     redirect("/tasks")
-  #   else
-  #     erb(:task)
-  #   end
-  # end
+  delete("/stores/:id") do
+    @store = Store.find(params.fetch("id").to_i())
+    if @store.destroy()
+      redirect("/stores")
+    else
+      erb(:errors)
+    end
+  end
