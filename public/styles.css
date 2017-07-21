@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis|Jaldi|Ubuntu|Baloo+Bhaina|Courgette|Great+Vibes|Montserrat|Patua+One|Raleway');
+
+/*font-family: 'Montserrat', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Patua One', cursive;
+font-family: 'Courgette', cursive;
+font-family: 'Baloo Bhaina', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'Dosis', sans-serif;
+font-family: 'Jaldi', sans-serif;
+font-family: 'Ubuntu', sans-serif;*/
+
+body {
+  overflow-x: hidden;
+  background-image: url(http://www.keenmall.com/491-thickbox_default/converse-all-star-padded-collar-single-color-leather-high.jpg);
+  color: red;
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1{
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  font-size: 65px;
+}
+
+h2{
+  font-size: 50px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.button{
+  color: red;
+  font-family: 'Raleway', sans-serif;
+  padding: 5px;
+  width: 250px;
+}
+
+a {
+  color: black;
+  font-size: 30px;
+}
+
+p {
+  color: black;
+}
