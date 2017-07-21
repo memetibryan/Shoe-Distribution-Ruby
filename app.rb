@@ -76,7 +76,7 @@ require("bundler/setup")
     brand_ids = params.fetch("brand_ids")
     @store.update({:brand_ids => brand_ids})
     @brands = Brand.all()
-    erb(:store_details)
+    redirect("/stores")
   end
 
   delete("/stores/:id") do
