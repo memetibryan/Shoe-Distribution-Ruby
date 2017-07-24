@@ -11,11 +11,11 @@ ENV['RACK_ENV'] = 'test'
 
   RSpec.configure do |config|
     config.after(:each) do
-      Salon.all().each() do |salon|
-        salon.destroy()
+      Store.all().each() do |store|
+        store.destroy()
       end
-      Client.all().each() do |client|
-        client.destroy()
+      Brand.all().each() do |brand|
+        brand.destroy()
       end
     end
   end

@@ -1,44 +1,44 @@
 require('spec_helper')
 
-describe('adding a new salon', {:type => :feature}) do
-    it('allows a user to click a salon to see the clients and details for it') do
-      visit('/salons/new')
-      # click_button('Add New Salon')
+describe('adding a new store', {:type => :feature}) do
+    it('allows a user to click a store to see the brands and details for it') do
+      visit('/stores/new')
+      # click_button('Add New Store')
       fill_in('name', :with =>'Adrian Cole')
       click_button('Add')
       expect(page).to have_content('Success!')
     end
   end
 
-  describe('viewing all of the salons', {:type => :feature}) do
-    it('allows a user to see all of the salons that have been created') do
-      salon = Salon.new({:name => 'Dan Nathan', :id => nil})
-      salon.save()
+  describe('viewing all of the stores', {:type => :feature}) do
+    it('allows a user to see all of the stores that have been created') do
+      store = Store.new({:name => 'Dan Nathan', :id => nil})
+      store.save()
       visit('/')
-      click_link('Salonists')
-      expect(page).to have_content(salon.name)
+      click_link('Storeists')
+      expect(page).to have_content(store.name)
     end
   end
 
-  describe('seeing details for a single salon', {:type => :feature}) do
-    it('allows a user to click a salon to see the clients and details for it') do
-      test_salon = Salon.new({:name => 'Jane Njoki', :id => nil})
-      test_salon.save()
-      test_client = Client.new({:description => "Mary Kimani", :salon_id => test_salon.id()})
-      test_client.save()
-      visit('/salons')
-      click_link(test_salon.name())
-      expect(page).to have_content(test_client.description())
+  describe('seeing details for a single store', {:type => :feature}) do
+    it('allows a user to click a store to see the brands and details for it') do
+      test_store = Store.new({:name => 'Jane Njoki', :id => nil})
+      test_store.save()
+      test_brand = Brand.new({:name => "Mary Kimani", :store_id => test_store.id()})
+      test_brand.save()
+      visit('/stores')
+      click_link(test_store.name())
+      expect(page).to have_content(test_brand.name())
     end
   end
 
-  describe('adding clients to a salon', {:type => :feature}) do
-    it('allows a user to add a client to a salon') do
-      test_salon = Salon.new({:name => 'Jane Njoki', :id => nil})
-      test_salon.save()
+  describe('adding brands to a store', {:type => :feature}) do
+    it('allows a user to add a brand to a store') do
+      test_store = Store.new({:name => 'Jane Njoki', :id => nil})
+      test_store.save()
       visit("/add")
-      fill_in("Client", {:with => "Kimani Njoki"})
-      click_button("Add Client")
+      fill_in("Brand", {:with => "Kimani Njoki"})
+      click_button("Add Brand")
       expect(page).to have_content("Success!")
     end
   end
