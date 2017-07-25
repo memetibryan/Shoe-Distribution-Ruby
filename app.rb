@@ -97,7 +97,7 @@ require("bundler/setup")
     @brand = Brand.find(params.fetch("id").to_i())
     if @brand.destroy()
       erb(:success)
-    elseG
+    else
       erb(:errors)
     end
   end
